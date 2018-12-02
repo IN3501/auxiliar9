@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ejemplo Auxiliar - IN3501</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+{% include 'app_de_in3501/menu.html' %}
+
+<!-- Header -->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container">
+        <h1 class="text-uppercase mb-0">Login</h1>
+    </div>
+</header>
+
+{%if user.is_authenticated%}
+    <section id="logout">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-secondary mb-0">Login</h2>
+                ¡Hola {{ user.username }}!
+                <br>
+                <p><a href="/logout/">Logout</a></p>
+        </div>
+    </section>
+
+{% else %}
+    <section id="login">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-secondary mb-0">Login</h2>
+            <form method="post" action="/login/">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Nombre de usuario</label>
+                    <input type="text" class="form-control" id="username" placeholder="Usuario" name="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña" name="password">
+                </div>
+                <button type="submit" class="btn btn-default">Login</button>
+            </form>
+        </div>
+    </section>
+{% endif %}
+
+{% include 'app_de_in3501/footer.html' %}
+</body>
+</html>

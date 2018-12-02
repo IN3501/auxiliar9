@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ejemplo Auxiliar - IN3501</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    {% include 'app_de_in3501/menu.html' %}
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container">
+            <h1 class="text-uppercase mb-0">Lista de Cursos</h1>
+        </div>
+    </header>
+
+    <!-- Lista de Cursos Primavera -->
+    <section id="lista_primavera">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-secondary mb-0">Semestre Primavera</h2>
+            <hr class="star-dark mb-5">
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">UD</th>
+                            <th scope="col">Horario</th>
+                            <th scope="col">Año</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for value in cursos_primavera %}
+                        <tr>
+                            <td>{{value.pk}}</td>
+                            <td>{{value.nombre}}</td>
+                            <td>{{value.codigo}}</td>
+                            <td>{{value.ud}}</td>
+                            <td>{{value.horario}}</td>
+                            <td>{{value.anho | date:'Y'}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Cursos Otoño -->
+    <section id="lista_otonio">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-secondary mb-0">Semestre Otoño</h2>
+            <hr class="star-dark mb-5">
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">UD</th>
+                            <th scope="col">Horario</th>
+                            <th scope="col">Año</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for value in cursos_otonio %}
+                        <tr>
+                            <td>{{value.pk}}</td>
+                            <td>{{value.nombre}}</td>
+                            <td>{{value.codigo}}</td>
+                            <td>{{value.ud}}</td>
+                            <td>{{value.horario}}</td>
+                            <td>{{value.anho | date:'Y'}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    {% include 'app_de_in3501/footer.html' %}
+
+</body>

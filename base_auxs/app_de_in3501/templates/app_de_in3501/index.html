@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ejemplo Auxiliar - IN3501</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    {% include 'app_de_in3501/menu.html' %}
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container">
+            <img class="img-fluid w-25 mb-5 d-block mx-auto" src="{% static 'img/Professortocat_v2.png' %}" alt="">
+            <h1 class="text-uppercase mb-0">Ejemplo Auxiliar</h1>
+            <hr class="star-light">
+            <h2 class="font-weight-light mb-0">Uso del framework Django</h2>
+        </div>
+    </header>
+
+    <section id="bienvenida">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-secondary mb-0">¡Bienvenidos! A Todos</h2>
+            <hr class="star-dark mb-5">
+
+            <div class="row">
+                <p>En la actualidad, las organizaciones representan sistemas complejos, compuestos por diferentes entidades,
+                    las cuales necesitan interrelacionarse para ser orientadas hacia un objetivo en común.
+                    Esta interrelación se traduce en un proceso de negocio, fundamental para que aquellos objetivos se cumplan.
+                    Una de las componentes habilitadoras de estos procesos son las Tecnologías de la Información y Comunicaciones (TICs),
+                    las cuales permiten entregar diversos beneficios a la organización, pudiendo incluso representar una ventaja competitiva importante.
+                    Por este y otros motivos, las TICs son ampliamente utilizadas y deben ser consideradas al momento de ejercer gestión sobre una organización.</p>
+            </div>
+            <div class="row">
+                <p> En este contexto, el curso IN3501, Tecnologías de Información y Comunicaciones para la Gestión,
+                    tiene como propósito que el estudiante diseñe soluciones a problemas de tecnologías de información y comunicación en diversas organizaciones,
+                    aportando lineamientos de mejora respecto de los sistemas de información de las organizaciones.</p>
+            </div>
+            <div class="row">
+                <p>La estrategia metodológica a utilizar es activo – participativa; permite que el estudiante trabaje en clases mediante resolución de problemas cercanos,
+                    en forma individual y colectiva, a modo de fomentar el trabajo en equipo, gestionando su autoaprendizaje,
+                    por medio de diversas actividades como resolución de ejercicios, método de proyecto, presentaciones orales, entre otras.
+                    El docente acompaña el proceso, resolviendo dudas, corrigiendo, proponiendo perspectivas de trabajo.</p>
+            </div>
+            <div class="row celeste">
+                <p>Se debe señalar, también, que este curso será teórico-práctico. Se basará en cátedras y auxiliares;
+                    ambas clases entregarán las herramientas necesarias para que el estudiante desarrolle las actividades del curso con éxito.
+                    El material utilizado durante las clases expositivas del curso, será puesto a disposición de los estudiantes de forma oportuna.</p>
+            </div>
+        </div>
+    </section>
+
+
+    {% include 'app_de_in3501/footer.html' %}
+
+</body>
+</html>
